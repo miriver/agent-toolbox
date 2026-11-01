@@ -1,0 +1,10 @@
+{
+  "name": "checkpoint-compact",
+  "version": "0.2.0",
+  "description": "Lets Claude compact its own conversation at a checkpoint it chooses, to cut prompt-cache costs in long sessions.",
+  "author": {
+    "name": "miriver"
+  },
+  "repository": "https://github.com/miriver/agent-toolbox",
+  "types": "./types/index.d.ts"
+}

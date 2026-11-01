@@ -1,0 +1,15 @@
+{
+  "name": "agent-toolbox",
+  "description": "Plugins that make coding agents cheaper and steadier in long sessions.",
+  "owner": {
+    "name": "miriver"
+  },
+  "plugins": [
+    {
+      "name": "checkpoint-compact",
+      "source": "./plugins/checkpoint-compact",
+      "description": "Lets Claude compact its own conversation at a checkpoint it chooses, to cut prompt-cache costs in long sessions.",
+      "version": "0.2.0"
+    }
+  ]
+}
