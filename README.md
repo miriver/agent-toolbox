@@ -6,16 +6,21 @@ then install only the plugins you want.
 
 | Plugin | What it does | Claude Code | GitHub Copilot | Codex |
 | --- | --- | --- | --- | --- |
-| [checkpoint-compact](plugins/checkpoint-compact) | Lets Claude compact its own conversation at a checkpoint it chooses | ✅ | — | — |
+| [session-controls](plugins/session-controls) | Gives Claude controls over its own session, starting with compacting at a checkpoint it chooses | ✅ | — | — |
 
 Each harness reads its own marketplace file in this repository, so plugins for
 GitHub Copilot and Codex can be added beside the Claude Code ones.
 
-## checkpoint-compact
+## session-controls
+
+Controls over its own session that otherwise only you have, given to Claude as
+tools. The first is compaction at a checkpoint.
+
+### Compacting at a checkpoint
 
 A long session pays to re-read its whole conversation on every request. Claude
 Code compacts on its own only when the context is nearly full, and otherwise
-waits for you to type `/compact`. This plugin gives Claude a tool,
+waits for you to type `/compact`. The plugin gives Claude a tool,
 `compact_at_checkpoint`, so it can compact at a natural checkpoint it chooses.
 The tool takes an optional `instructions` string for what the summary must keep.
 
@@ -42,7 +47,7 @@ session, such as the Claude desktop app's Code tab. The command works in both.
 At the prompt of a Claude Code session in a terminal:
 
 ```
-/plugin install checkpoint-compact --marketplace miriver/agent-toolbox
+/plugin install session-controls --marketplace miriver/agent-toolbox
 ```
 
 Answer `y` to add the marketplace, then choose a scope: user scope gives every
@@ -51,7 +56,7 @@ session the tool.
 From a shell:
 
 ```sh
-claude plugin install checkpoint-compact --marketplace miriver/agent-toolbox
+claude plugin install session-controls --marketplace miriver/agent-toolbox
 ```
 
 In the Claude desktop app, where `/plugin` does not run: click + next to the

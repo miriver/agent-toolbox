@@ -4,7 +4,7 @@ import type { CompactRequest } from '../types'
 
 // The pending request lives in $.state, not in a module variable: a hot reload
 // of this module starts its variables over and keeps $.state.
-const request = { plugin: 'checkpoint-compact', key: 'request' } as const
+const request = { plugin: 'session-controls', key: 'request' } as const
 
 // How long after a turn ends the mod waits before it queues /compact. The queue
 // call is refused inside a hook the turn waits on, so the mod makes it from a
@@ -54,7 +54,7 @@ export const register: Register = on => {
   // request; turn.complete acts on it.
   on(
     'tool.call',
-    { tool: 'mcp__checkpoint-compact__compact_at_checkpoint' },
+    { tool: 'mcp__session-controls__compact_at_checkpoint' },
     async ($, e) => {
       if (e.agentId !== undefined) {
         return {
@@ -74,7 +74,7 @@ export const register: Register = on => {
       return { result: ANSWER }
     },
   ).catch(() => ({
-    deny: 'checkpoint-compact could not record the request, so nothing will be compacted.',
+    deny: 'session-controls could not record the request, so nothing will be compacted.',
   }))
 
   on('turn.complete', async ($, e, next) => {

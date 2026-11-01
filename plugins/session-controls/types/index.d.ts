@@ -16,7 +16,7 @@ export type CompactRequest = {
 
 declare module 'claude-code' {
   interface PluginState {
-    'checkpoint-compact': {
+    'session-controls': {
       /** The pending request, or null when none is pending. */
       request: CompactRequest | null
     }

@@ -6,10 +6,10 @@
   },
   "plugins": [
     {
-      "name": "checkpoint-compact",
-      "source": "./plugins/checkpoint-compact",
-      "description": "Lets Claude compact its own conversation at a checkpoint it chooses, to cut prompt-cache costs in long sessions.",
-      "version": "0.2.0"
+      "name": "session-controls",
+      "source": "./plugins/session-controls",
+      "description": "Gives Claude controls over its own session that otherwise only you have, starting with compacting its conversation at a checkpoint it chooses.",
+      "version": "0.3.0"
     }
   ]
 }

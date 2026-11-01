@@ -1,0 +1,10 @@
+{
+  "name": "session-controls",
+  "version": "0.3.0",
+  "description": "Gives Claude controls over its own session that otherwise only you have, starting with compacting its conversation at a checkpoint it chooses.",
+  "author": {
+    "name": "miriver"
+  },
+  "repository": "https://github.com/miriver/agent-toolbox",
+  "types": "./types/index.d.ts"
+}

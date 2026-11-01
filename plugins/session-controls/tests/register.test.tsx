@@ -1,7 +1,7 @@
 import type { CommandRunInput, CommandRunResult, On } from 'claude-code'
 import { expect, mock, test } from 'claude-code/testing'
 
-const TOOL = 'mcp__checkpoint-compact__compact_at_checkpoint'
+const TOOL = 'mcp__session-controls__compact_at_checkpoint'
 
 type Outcome = (e: CommandRunInput) => CommandRunResult | Promise<CommandRunResult>
 
@@ -32,7 +32,7 @@ function engine(on: On, outcome: Outcome = ran) {
   on('tool.register', (_, e) => {
     registered.push(e)
 
-    return { value: { tool: `mcp__checkpoint-compact__${e.name}` } }
+    return { value: { tool: `mcp__session-controls__${e.name}` } }
   })
   on('command.run', (_, e) => {
     commands.push({ command: e.command, args: e.args })

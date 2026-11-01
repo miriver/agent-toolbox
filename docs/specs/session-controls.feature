@@ -1,21 +1,22 @@
-Feature: Checkpoint compaction
-  The checkpoint-compact mod lets Claude compact its own conversation at a
-  checkpoint it chooses, so a long Claude Code session stops paying to re-read a
-  conversation whose useful state is already written somewhere durable.
+Feature: Session controls
+  The session-controls plugin gives Claude controls over its own session that
+  otherwise only the human has. The first is compaction at a checkpoint Claude
+  chooses, so a long Claude Code session stops paying to re-read a conversation
+  whose useful state is already written somewhere durable.
 
   Rule: Act only where the human installed the mod
 
     Scenario: Change nothing until the mod is installed
       Given the agent-toolbox marketplace is added
-      And the human has not installed checkpoint-compact
+      And the human has not installed session-controls
       Then no session has the compaction tool
 
     Scenario: Install it for every session
-      When the human installs checkpoint-compact at user scope
+      When the human installs session-controls at user scope
       Then sessions in every project have the compaction tool
 
     Scenario: Install it for one project
-      When the human installs checkpoint-compact at local scope in a project
+      When the human installs session-controls at local scope in a project
       Then sessions in that project have the compaction tool
       And sessions in other projects do not
 
