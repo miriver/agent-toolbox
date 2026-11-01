@@ -24,7 +24,7 @@ waits for you to type `/compact`. The plugin gives Claude a tool,
 `compact_at_checkpoint`, so it can compact at a natural checkpoint it chooses.
 The tool takes an optional `instructions` string for what the summary must keep.
 
-The plugin's `when-to-compact` skill teaches when compaction pays: the
+The plugin's `session-controls` skill teaches when compaction pays: the
 conversation is large, much work is still to come, and the next step needs
 little of what came before. Compacting costs a pass over the whole conversation,
 plus whatever is re-read afterwards. So the skill warns against writing long

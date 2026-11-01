@@ -9,7 +9,7 @@
       "name": "session-controls",
       "source": "./plugins/session-controls",
       "description": "Gives Claude controls over its own session that otherwise only you have, starting with compacting its conversation at a checkpoint it chooses.",
-      "version": "0.3.0"
+      "version": "0.4.0"
     }
   ]
 }

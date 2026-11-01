@@ -14,7 +14,7 @@ const DISPATCH_DELAY_MS = 500
 const DESCRIPTION = [
   'Compact this conversation at a natural checkpoint, so a long session stops paying to re-read all of it on every request.',
   'Call it only when both hold: you have just finished a unit of work and the next step starts fresh, and everything that matters from this conversation is already written somewhere durable (a tracking issue, a memory or notes file, a PR, a commit, a file in the repo).',
-  'Compaction is a trade: it pays only when the conversation is large, much work remains, and the next step needs little of what came before. Do not write long notes just so you can compact, and afterwards read only what the next step needs; the when-to-compact skill has the full guidance.',
+  'Compaction is a trade: it pays only when the conversation is large, much work remains, and the next step needs little of what came before. Do not write long notes just so you can compact, and afterwards read only what the next step needs; the session-controls skill has the full guidance.',
   'Never call it in the middle of a task, or when the only record of a decision is this conversation. Waiting on subagents or background work is fine if `instructions` carries what you need to pick their results back up, such as their task or agent IDs.',
   'The compaction does not run during this call. It runs when your turn ends, so finish the turn right after calling it, with a short sign-off and no further tool calls.',
   'Afterwards this conversation is replaced by a summary, so continue from the durable record, not from your memory of this conversation.',
